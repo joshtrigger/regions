@@ -11,7 +11,10 @@
           Date issued: <i>{{ region.issueDate | date }}</i>
         </p>
         <p>
-          Status: <i [ngStyle]="{color:'green'}">{{ region.isActive ? "Active" : "Inactive" }}</i>
+          Status:
+          <i [ngStyle]="{ color: region.isActive ? 'green' : 'red' }">{{
+            region.isActive ? "Active" : "Inactive"
+          }}</i>
         </p>
       </div>
       <mat-expansion-panel *ngFor="let district of region.districts">
